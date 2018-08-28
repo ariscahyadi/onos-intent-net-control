@@ -1,0 +1,117 @@
+{
+  "ports": {
+    "of:0000000000000001/5": {
+      "interfaces": [
+        {
+          "ips": [
+            "116.89.190.253/30"
+          ],
+          "mac": "00:16:3e:94:ce:21"
+        }
+      ]
+    },
+    "of:0000000000000001/4": {
+      "interfaces": [
+        {
+          "ips": [
+            "116.89.190.250/30"
+          ],
+          "mac": "00:16:3e:16:88:91"
+        }
+      ]
+    },
+    "of:0000000000000002/3": {
+      "interfaces": [
+        {
+          "ips": [
+            "116.89.190.242/30"
+          ],
+          "mac": "00:16:3e:c9:8d:20"
+        }
+      ]
+    },
+    "of:0000000000000003/1": {
+      "interfaces": [
+        {
+          "ips": [
+            "116.89.190.30/30"
+          ],
+          "mac": "00:16:3e:49:86:b1"
+        }
+      ]
+    },
+    "of:0000000000000004/1": {
+      "interfaces": [
+        {
+          "ips": [
+            "116.89.190.62/30"
+          ],
+          "mac": "00:16:3e:c2:64:00"
+        }
+      ]
+    }
+  },
+  "apps": {
+    "org.onosproject.router": {
+      "bgp": {
+        "bgpSpeakers": [
+          {
+            "name": "speaker1",
+            "connectPoint": "of:0000000000000001/1",
+            "peers": [
+              "116.89.190.249"
+            ]
+          },
+          {
+            "connectPoint": "of:0000000000000001/2",
+            "peers": [
+              "116.89.190.254"
+            ]
+          },
+          {
+            "connectPoint": "of:0000000000000001/3",
+            "peers": [
+              "116.89.190.241"
+            ]
+          },
+          {
+            "connectPoint": "of:0000000000000001/9",
+            "peers": [
+              "116.89.190.29"
+            ]
+          },
+          {
+            "connectPoint": "of:0000000000000001/10",
+            "peers": [
+              "116.89.190.61"
+            ]
+          }
+        ]
+      }
+    },
+    "org.onosproject.onosintentnetcontrol": {
+      "members": {
+        "controllers": [
+          {
+            "controllerType": "local",
+            "asn": "65011",
+            "ip": "103.22.221.35",
+            "username": "karaf",
+            "password": "karaf",
+            "sinkPort" : "of:0065a0b3ccf32380/17"
+          },
+          {
+            "controllerType": "remote",
+            "asn": "65012",
+            "ip": "103.22.221.149",
+            "username": "karaf",
+            "password": "karaf",
+            "sinkPort" : "of:0000000000000001/10"
+          }
+        ]
+      }
+    }
+  }
+}
+
+
